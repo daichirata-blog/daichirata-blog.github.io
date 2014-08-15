@@ -1,0 +1,11 @@
+# Site settings
+title: blog.daich.org
+email: hirata.daichi@gmail.com
+description: "Daich's Blog. Coding and ideas."
+permalink: /:year/:month/:day/:title
+url: http://daic-h.github.io
+
+# Build settings
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "Gemfile", "Gemfile.lock"]
+markdown: redcarpet
+hilighter: pygments

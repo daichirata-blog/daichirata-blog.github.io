@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+
+    <meta name="author" content="Daichi HIRATA">
+    <meta name="description" content="{{ site.description }}">
+
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+
+    <link rel="stylesheet" href="{{ "/assets/css/normalize.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ "/assets/css/pygments.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Atom Feed">
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <section class="site-title">
+          <a href="{{ "/" | prepend: site.baseurl }}">{{ site.title }}</a>
+        </section>
+      </div>
+    </header>
+
+    <main role="main">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <section class="copyright">
+          All content copyright <a href="{{ "/" | prepend: site.baseurl }}">{{ site.title }}</a> &copy; {{date format="YYYY"}} &bull; All rights reserved.
+        </section>
+        <section class="poweredby">
+          Powered by <a href="https://github.com/daic-h/daic-h.github.io">Github</a> & Travis CI & Jekyll
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

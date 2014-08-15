@@ -1,0 +1,156 @@
+---
+---
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,freesans,sans-serif;
+    color: #333;
+}
+
+a {
+    color: #307EA9;
+    text-decoration: none;
+}
+
+pre {
+    padding: 16px;
+    overflow: auto;
+    line-height: 1.2;
+    letter-spacing: 0.1px;
+    background-color: #F7F7F7;
+    border-radius: 3px;
+}
+
+h1, h2 {
+    color: #222;
+}
+
+.container {
+    width: 650px;
+    margin: 0px auto;
+}
+
+.site-header {
+    margin: 70px 0px 25px;
+
+    .site-title {
+        font-size: 30px;
+        font-weight: normal;
+        text-transform: uppercase;
+
+        a { color: #333; }
+    }
+}
+
+.site-footer {
+    text-align: center;
+
+    .container {
+        padding: 60px;
+    }
+
+    a { color: #333; }
+}
+
+.post-article {
+    p {
+        line-height: 1.9;
+
+        code {
+            padding: 3px 5px;
+            color: #222;
+            background-color: #F7F7F7;
+            border-radius: 3px;
+        }
+    }
+
+    h2 {
+        margin: 50px 0 0;
+        font-weight: normal;
+    }
+
+    .post-header {
+        margin: 40px 0 30px;
+    }
+
+    .post-meta {
+        font-size: 13px;
+        color: #999;
+    }
+
+    .post-title {
+        margin: 0;
+    }
+}
+
+.post-footer {
+    position: relative;
+    margin: 30px 0px 0px;
+    padding: 30px 0px 30px;
+    border-top: 1px solid #EBF2F6;
+    border-bottom: 1px solid #EBF2F6;
+
+    h4 {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    p {
+        margin: 8px 0;
+        font-size: 15px;
+        line-height: 1.2;
+    }
+
+    .author {
+        margin-right: 180px;
+
+        header {
+	        float: left;
+	        width: 80px;
+        }
+
+        article {
+	        margin-left: 80px;
+	        min-height: 80px;
+	        padding-left: 20px;
+        }
+    }
+
+    .share {
+        position: absolute;
+        top: 30px;
+        right: 0;
+        width: 140px;
+
+        a {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            color: #BBC7CC;
+        }
+    }
+}
+
+img.profile {
+    width: 80px;
+    height: auto;
+    border-radius: 50px;
+}
+
+.post-list {
+    margin: 25px 0px;
+    padding: 0px;
+
+    li {
+        list-style-type: none;
+        margin-bottom: 0;
+        padding: 7px 5px;
+        font-size: 18px;
+    }
+
+    span {
+        padding-top: 2px;
+        float: right;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: #999;
+    }
+}
