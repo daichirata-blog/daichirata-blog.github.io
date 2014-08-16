@@ -6,6 +6,6 @@ permalink: /:year/:month/:day/:title
 url: http://blog.daich.org
 
 # Build settings
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "Gemfile", "Gemfile.lock"]
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "Gemfile", "Gemfile.lock", "bin"]
 markdown: redcarpet
 hilighter: pygments
