@@ -68,6 +68,16 @@ h1, h2 {
         font-weight: normal;
     }
 
+    ul {
+        padding-left: 20px;
+    }
+
+    li {
+        padding: 0;
+        margin-left: 0;
+        line-height: 160%;
+    }
+
     .post-header {
         margin: 40px 0 30px;
     }
