@@ -1,61 +1,42 @@
-# Harmony Jekyll theme general configurations
+name: BLOG.DAICH.ORG
+description: Everything is code.
+meta_description: Everything is code.
 
-# Base URL
-baseurl:
+aboutPage: true
 
-# Site live URL
-url: http://blog.daich.org
-# Localhost
-# url: http://localhost:4000
-
-# Harmony theme configuration. Please change accordingly.
-harmony:
-  name: BLOG.DAICH.ORG
-  # Little description about your site
-  description:
-  # 'meta_description:' Write an awesome description for your new site here.
-  # It will appear in your document head meta (for Google search results) and
-  # in your feed.xml site description.
-  meta_description: > #
-  # Harmony is a free responsive jekyll theme by Gayan Virajith
-  # and Maheshika Lakmali. Sourced on Github -
-  # https://github.com/gayanvirajith/harmony
-  basetheme: theme-base-01 # pre defined thmes are darken, blue-water, redish.
-  author: # Author details
-    name: Daichi HIRATA
-    email: hirata.daichi@gmail.com
-    url: http://blog.daich.org
-
-  # Google Analytics key, leave blank to ignore
-  google_analytics_key: UA-30550631-1
-
-  # Profile links, leave blank to ignore
-  social:
-    github: daic-h
-    twitter: Daic_h
-    facebook:
-    gplus:
-    dribble:
-    pinterest:
-
-# Conversion / Build settings
 markdown: redcarpet
-# This is how you put pygments config in jekyll 2.0 instead of pygments: true
 highlighter: pygments
 
-# Permalinks
+paginate: 20
+baseurl: /
+domain_name: http://blog.daich.org
+google_analytics: UA-30550631-1
+disqus_shortname: 'your-disqus-shortname'
+
+# Details for the RSS feed generator
+url: http://blog.daich.org
+author: Daichi HIRATA
+authorTwitter: Daic_h
+
 permalink: /:year/:month/:day/:title
 
 exclude:
   - CNAME
   - Gemfile
-  - Rakefile
-  - README.md
-  - .gitignore
-  - .sass-cache
   - Gemfile.lock
+  - LICENSE
+  - README.md
+  - Rakefile
+  - .gitignore
 
-# Sass conversion configs
-sass:
-  sass_dir: assets/css/_sass
-  style: :compressed
+defaults:
+  - scope:
+      path: "" # empty string for all files
+      type: pages
+    values:
+      layout: default
+  - scope:
+      path: "" # empty string for all files
+      type: posts
+    values:
+      layout: post

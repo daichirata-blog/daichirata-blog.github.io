@@ -56,7 +56,7 @@ This formula is keg-only.
 Mac OS X already provides this software and installing another version in
 parallel can cause all kinds of trouble.
 
-Software that uses TeX, such as lilypond and octave, require a newer version
+Software that uses TeX, such as lilypond and octave, require a newer versqion
 of these files.
 
 /usr/local/Cellar/texinfo/5.2 (396 files, 8.1M)
@@ -82,7 +82,7 @@ OSXでEmacs(GUI版)を起動した際に[EmacsでPATHの設定が引き継がれ
 
 なので、PATH問題の解決にexec-path-from-shellを使うのをやめ、上のQiitaにある関数を定義した。
 
-```elisp
+```lisp
 (defun set-exec-path-from-shell-PATH ()
   "Set up Emacs' `exec-path' and PATH environment variable to match that used by the user's shell.
 
