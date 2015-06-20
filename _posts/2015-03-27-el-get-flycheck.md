@@ -1,9 +1,7 @@
 ---
-layout: post
 title: El-get + Flycheckのインストール時のエラー
-date: 2015-03-27
 categories:
-- Emacs
+  - Emacs
 ---
 
 最近Emacsの挙動が少し怪しくなってきていた。心当たりはすこしあって、Emacsのバージョンを上げた際に面倒くさくて全てのプラグインをバイトコンパイルし直さなかった。

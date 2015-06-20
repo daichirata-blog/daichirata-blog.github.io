@@ -1,9 +1,7 @@
 ---
-layout: post
-title: "Hello jekyll!!"
-date: 2014-08-20
+title: Hello jekyll!!
 categories:
-- Jekyll
+  - Jekyll
 ---
 
 ここ２年ほど転職先の忙しさも有り全くブログを書かなくなってしまっていたので心機一転して、jekyll + Github Pagesで新たにブログを作成することにした。
