@@ -4,8 +4,10 @@ meta_description: Everything is code.
 
 aboutPage: true
 
-markdown: redcarpet
-highlighter: pygments
+markdown: kramdown
+
+kramdown:
+  input: GFM
 
 paginate: 20
 baseurl: /
