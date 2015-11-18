@@ -8,6 +8,7 @@ markdown: kramdown
 
 kramdown:
   input: GFM
+  hard_wrap: false
 
 paginate: 20
 baseurl: /
