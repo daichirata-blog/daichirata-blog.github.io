@@ -1,6 +1,18 @@
 ---
-profile: true
 ---
 
-{% include post-list.html %}
-{% include footer.html %}
+<header class="profile">
+  <img class="profile-avatar" src="/assets/images/avatar.png"/>
+  <h1 class="profile-author">{{ site.author }}</h1>
+  <span class="profile-desc">{{ site.description }}</span>
+</header>
+
+<div class="post-list-wrapper">
+  <ul class="post-list">
+    {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}<aside class="dates">{{ post.date | date:"%b %d, %Y" }}</aside></a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
