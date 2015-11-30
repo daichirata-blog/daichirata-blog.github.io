@@ -1,5 +1,5 @@
 ---
-title: ActiveRecordのコネクションの仕組み
+title: ActiveRecord Connection
 categories:
   -
 ---
