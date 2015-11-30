@@ -308,7 +308,7 @@ OpenShiftもHerokuと同じようにCNAMEでのカスタムドメイン設定し
 $ rhc alias add anewcomer a-newcomer.com
 ```
 
-あとはapex alias等の参照先を最初に付与されたFQDN(anewcomer-daich.rhcloud.comとか)に設定すれば転送されるはず。
+あとはapex alias等の参照先を、最初に付与されたFQDN(anewcomer-daich.rhcloud.comとか)に設定すれば転送されるはず。
 
 ## Action Hook
 
