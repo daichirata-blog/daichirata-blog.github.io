@@ -65,7 +65,28 @@ Octopus.using(:shard1) do
 end
 ```
 
-のような感じ。実際にはRelation・Associationの対応でもう少し作りこみが必要だが基本的な考え方はこれで問題ない。
+のような感じ。 Shardへの振り分けはProxyのmethod_missingで
+
+```ruby
+def method_missing(method, *args, &block)
+  if should_clean_connection_proxy?(method)
+    conn = select_connection
+    self.last_current_shard = current_shard
+    clean_connection_proxy
+    conn.send(method, *args, &block)
+  elsif should_send_queries_to_shard_slave_group?(method)
+    send_queries_to_shard_slave_group(method, *args, &block)
+  elsif should_send_queries_to_slave_group?(method)
+    send_queries_to_slave_group(method, *args, &block)
+  elsif should_send_queries_to_replicated_databases?(method)
+    send_queries_to_selected_slave(method, *args, &block)
+  else
+    select_connection.send(method, *args, &block)
+  end
+end
+```
+
+現在のShardに対するconnectionを取得してそのconnectionに対してsendでdelegateする実装になっている。その他にも実際にはRelation・Associationの対応でもう少し作りこみが必要だが基本的な考え方はこれで問題ない。
 
 ## SwitchPoint
 
