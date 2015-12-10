@@ -251,11 +251,11 @@ irb(main):001:0> Rust.new.fib(10)
 => 55
 ```
 
-今回作成したファイルは[daic-h/rust_ruby_extention](https://github.com/daic-h/rust_ruby_extention)に置いてる。
+今回作成したファイルは[daic-h/rust_ruby_extention](https://github.com/daic-h/rust_ruby_extension)に置いてる。
 
 ## つらいところ
 
-CのヘッダーからRustの定義ファイルを生成する[crabtw/rust-bindgen](https://github.com/crabtw/rust-bindgen)というツールが一応あって、このツールを元にRubyのヘッダーファイルの定義を出力すると[こうなる。](https://github.com/daic-h/rust_ruby_extention/blob/master/src/bindgen.rs)完璧な変換までは難しくて、そのままではエラーになって使うことが出来ないんだけど、結構参考になると思うので一旦出力してこのファイルを見ながらやると捗ると思う。
+CのヘッダーからRustの定義ファイルを生成する[crabtw/rust-bindgen](https://github.com/crabtw/rust-bindgen)というツールが一応あって、このツールを元にRubyのヘッダーファイルの定義を出力すると[こうなる。](https://github.com/daic-h/rust_ruby_extension/blob/master/src/bindgen.rs)完璧な変換までは難しくて、そのままではエラーになって使うことが出来ないんだけど、結構参考になると思うので一旦出力してこのファイルを見ながらやると捗ると思う。
 
 ただ、当然なんだけどCのマクロには対応していないので、対応するCの関数があれば良いんだけど無かった場合には自分で実装する必要がある。例えばCのintをVALUEに変換する`FIX2LONG`マクロとか。Rubyは比較的対応する関数が多い気がするので意外となんとかなるかも？
 
