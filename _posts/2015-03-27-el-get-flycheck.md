@@ -1,7 +1,5 @@
 ---
 title: El-get + Flycheckのインストール時のエラー
-categories:
-  - Emacs
 ---
 
 最近Emacsの挙動が少し怪しくなってきていた。心当たりはすこしあって、Emacsのバージョンを上げた際に面倒くさくて全てのプラグインをバイトコンパイルし直さなかった。
@@ -80,7 +78,7 @@ OSXでEmacs(GUI版)を起動した際に[EmacsでPATHの設定が引き継がれ
 
 なので、PATH問題の解決にexec-path-from-shellを使うのをやめ、上のQiitaにある関数を定義した。
 
-```lisp
+```elisp
 (defun set-exec-path-from-shell-PATH ()
   "Set up Emacs' `exec-path' and PATH environment variable to match that used by the user's shell.
 

@@ -1,7 +1,5 @@
 ---
 title: RustだけでRuby native extensionを書く
-categories:
-  - 
 ---
 
 この記事は [Rust Advent Calendar 2015](http://qiita.com/advent-calendar/2015/rust-lang) 10日目の記事です。
@@ -82,7 +80,7 @@ Rubyのnative extensionはロード時にdlsymで`Init_<file_name>`という関�
 
 * Cargo.toml
 
-```
+```toml
 [package]
 name = "rust"
 version = "0.1.0"
@@ -121,7 +119,7 @@ irb(main):001:0>
 
 * Cargo.toml
 
-```
+```toml
 [dependencies]
 libc = "0.2.2"
 ```
@@ -130,7 +128,7 @@ libc = "0.2.2"
 
 * src/lib.rs
 
-```
+```rust
 #![allow(non_snake_case, non_camel_case_types)]
 
 extern crate libc;

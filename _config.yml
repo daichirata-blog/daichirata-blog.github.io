@@ -1,27 +1,24 @@
+domain_name: http://blog.daich.org
+url: http://blog.daich.org
+baseurl: /
+permalink: /:year/:month/:day/:title
+
 name: blog.daich.org
 description: Everything is code.
-meta_description: Everything is code.
-
-aboutPage: true
+author: Daichi HIRATA
+google_analytics: UA-30550631-1
 
 markdown: kramdown
-
 kramdown:
-  input: GFM
-  hard_wrap: false
-
-paginate: 20
-baseurl: /
-domain_name: http://blog.daich.org
-google_analytics: UA-30550631-1
-disqus_shortname: 'your-disqus-shortname'
-
-# Details for the RSS feed generator
-url: http://blog.daich.org
-author: Daichi HIRATA
-authorTwitter: Daic_h
-
-permalink: /:year/:month/:day/:title
+   input: GFM
+   hard_wrap: false
+gems:
+  - jemoji
+  - jekyll-coffeescript
+  - jekyll-mentions
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-feed
 
 exclude:
   - CNAME
@@ -33,20 +30,17 @@ exclude:
   - .gitignore
 
 defaults:
-  -
-    scope:
+  - scope:
       path: "" # empty string for all files
       type: pages
     values:
       layout: default
-  -
-    scope:
+  - scope:
       path: "" # empty string for all files
       type: posts
     values:
       layout: post
-  -
-    scope:
+  - scope:
       path: "" # empty string for all files
       type: drafts
     values:
