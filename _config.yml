@@ -1,7 +1,7 @@
 domain_name: http://blog.daich.org
 url: http://blog.daich.org
 baseurl: /
-permalink: /:year/:month/:day/:title
+permalink: /:year/:month/:day/:title/
 
 name: blog.daich.org
 description: Everything is code.
