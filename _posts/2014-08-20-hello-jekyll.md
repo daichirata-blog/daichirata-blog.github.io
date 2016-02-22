@@ -1,7 +1,5 @@
 ---
 title: Hello jekyll!!
-categories:
-  - Jekyll
 ---
 
 ここ２年ほど転職先の忙しさも有り全くブログを書かなくなってしまっていたので心機一転して、jekyll + Github Pagesで新たにブログを作成することにした。

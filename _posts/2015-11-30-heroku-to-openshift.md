@@ -4,7 +4,7 @@ categories:
   -
 ---
 
-![](/assets/images/heroku_to_openshift/top.png)
+![](/assets/images/heroku-to-openshift/top.png)
 
 Herokuを無料で使い続けることが難しくなってしまい、[以前のブログ](http://a-newcomer.com)(Sinatra/[Lokka](https://github.com/lokka/lokka))はどこかに移行しておきたいと思い色々検討した。
 
