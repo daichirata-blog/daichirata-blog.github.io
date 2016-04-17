@@ -11,7 +11,8 @@
   <ul class="post-list">
     {% for post in site.posts %}
     <li>
-      <a href="{{ post.url }}">{{ post.title }}<aside class="dates">{{ post.date | date:"%b %d, %Y" }}</aside></a>
+      <a href="{{ post.url }}">
+        <span class="title">{{ post.title }}</span><aside class="dates">{{ post.date | date:"%b %d, %Y" }}</aside></a>
     </li>
     {% endfor %}
   </ul>
