@@ -8,6 +8,8 @@ description: Everything is code.
 author: Daichi HIRATA
 google_analytics: UA-30550631-1
 
+timezone: Asia/Tokyo
+
 markdown: kramdown
 kramdown:
   input: GFM

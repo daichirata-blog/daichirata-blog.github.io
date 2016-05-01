@@ -77,7 +77,7 @@ java.io.IOException: Connection timed out
 [INFO][cluster.service] [elasticsearch-1] removed {{elasticsearch-2}{Xa2Cq98mQie1WcaXFfHraQ}{10.2.101.5}{10.2.101.5:9300},}, reason: zen-disco-master_failed ({elasticsearch-2}{Xa2Cq98mQie1WcaXFfHraQ}{10.2.101.16}{10.2.101.16:9300})
 ```
 
-そこで、対象のノード間でpingコマンドを実行したまま様子を見てみたんですが特にネットワークが切れてるようでは無かったので、ノード間のtcp接続を確認してみます。
+対象のノード間でpingコマンドを実行したまま様子を見てみたんですが、特にネットワークが切れてるようでは無かったのでノード間のtcp接続を確認してみます。
 
 * ノード 1
 
