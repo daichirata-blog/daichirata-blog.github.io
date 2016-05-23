@@ -13,34 +13,35 @@ timezone: Asia/Tokyo
 markdown: kramdown
 kramdown:
   input: GFM
+  autolink: true
   hard_wrap: false
 gems:
-- jemoji
-- jekyll-coffeescript
-- jekyll-mentions
-- jekyll-redirect-from
-- jekyll-sitemap
-- jekyll-feed
+  - jemoji
+  - jekyll-coffeescript
+  - jekyll-mentions
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-feed
 
 exclude:
-- CNAME
-- Gemfile
-- Gemfile.lock
-- LICENSE
-- README.md
-- Rakefile
-- .gitignore
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - Rakefile
+  - .gitignore
 
 defaults:
-- scope:
-    type: pages
-  values:
-    layout: default
-- scope:
-    type: posts
-  values:
-    layout: post
-- scope:
-    type: drafts
-  values:
-    layout: post
+  - scope:
+      type: pages
+    values:
+      layout: default
+  - scope:
+      type: posts
+    values:
+      layout: post
+  - scope:
+      type: drafts
+    values:
+      layout: post
