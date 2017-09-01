@@ -2,8 +2,6 @@
 title: ElasticsearchとGCPのTCP Keepaliveではまった話
 ---
 
-{% raw %}
-
 今回はGCP上にElasticsearchクラスタを組もうとしてはまった話をします。ちゃんとドキュメント読めと言われればそこまでなんだけど、ミドルウェアが間に入ってて気づくのに遅れてしまった…。
 
 ## TL;DR
@@ -17,12 +15,14 @@ GCEのファイヤーウォールはinactiveコネクションを10分で切断�
 * OS: CentOS 7.2
 * Elasticsearch: 2.3.1
 
+{% raw %}
 ```
 [INFO ][discovery.gce              ] [elasticsearch-1] master_left [{elasticsearch-2}{4TPArCtHQMKgWaLod3ZMjA}{10.2.101.5}{10.2.101.5:9300}], reason [failed to ping, tried [3] times, each with  maximum [30s] timeout]
 [WARN ][discovery.gce              ] [elasticsearch-1] master left (reason = failed to ping, tried [3] times, each with  maximum [30s] timeout), current nodes: {{elasticsearch-3}{JtcxuuucRXiClrl6q7qL8A}{10.2.101.5}{10.2.101.5:9300},{elasticsearch-1}{RQvtZKAJTfGmbmWETYY0fw}{10.2.101.4}{elasticsearch-1.c.cyberagent-013.internal/10.2.101.4:9300},}
 [INFO ][cluster.service            ] [elasticsearch-1] removed {{elasticsearch-2}{4TPArCtHQMKgWaLod3ZMjA}{10.2.101.5}{10.2.101.5:9300},}, reason: zen-disco-master_failed ({elasticsearch-2}{4TPArCtHQMKgWaLod3ZMjA}{10.2.101.5}{10.2.101.5:9300})
 [DEBUG][action.admin.cluster.health] [elasticsearch-1] connection exception while trying to forward request with action name [cluster:monitor/health] to master node [{elasticsearch-2}{4TPArCtHQMKgWaLod3ZMjA}{10.2.101.5}{10.2.101.5:9300}], scheduling a retry. Error: [org.elasticsearch.transport.NodeDisconnectedException: [elasticsearch-2][10.2.101.5:9300][cluster:monitor/health] disconnected]
 ```
+{% endraw %}
 
 最初はエラーメッセージから、負荷やGCなどでノード間のpingがtime outしているのかと思いその辺の設定を変えて様子を見てみました。
 
@@ -49,6 +49,7 @@ curl -XPUT localhost:9200/_cluster/settings -d '
 
 その上でログを見てみると、どうもネットワークレイヤでそもそも接続できていない様なログが出力されていました。
 
+{% raw %}
 ```
 [2016-04-27 16:07:43,207][TRACE][transport.netty          ] [elasticsearch-1] close connection exception caught on transport layer [[id: 0xa2b52d5c, /10.2.101.4:40290 => /10.2.101.5:9300]], disconnecting from relevant node
 java.io.IOException: Connection timed out
@@ -68,14 +69,17 @@ java.io.IOException: Connection timed out
         at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
         at java.lang.Thread.run(Thread.java:745)
 ```
+{% endraw %}
 
 後、先程は気づいてなかったんですがtransportで切断されているログも出力されていました。
 
+{% raw %}
 ```
 [INFO][discovery.gce  ] [elasticsearch-1] master_left [{elasticsearch-2}{Xa2Cq98mQie1WcaXFfHraQ}{10.2.101.5}{10.2.101.5:9300}], reason [transport disconnected]
 [WARN][discovery.gce  ] [elasticsearch-1] master left (reason = transport disconnected), current nodes: {{elasticsearch-1}{fjLqVUoxRB6RRNCecJSAaw}{10.2.101.4}{10.2.101.4:9300},}
 [INFO][cluster.service] [elasticsearch-1] removed {{elasticsearch-2}{Xa2Cq98mQie1WcaXFfHraQ}{10.2.101.5}{10.2.101.5:9300},}, reason: zen-disco-master_failed ({elasticsearch-2}{Xa2Cq98mQie1WcaXFfHraQ}{10.2.101.16}{10.2.101.16:9300})
 ```
+{% endraw %}
 
 対象のノード間でpingコマンドを実行したまま様子を見てみたんですが、特にネットワークが切れてるようでは無かったのでノード間のtcp接続を確認してみます。
 
@@ -173,4 +177,3 @@ sudo /sbin/sysctl -w net.ipv4.tcp_keepalive_time=60 net.ipv4.tcp_keepalive_intvl
 
 最初はElasticsearch側の問題だと思っていろいろ設定をみたり、GithubのIssueとかを漁っていて結構気づくのに時間がかかってしまいました。最近はGCPでシステムを構成することも大分多くなってきたと思いますが、他のシステムでも似たような事がおきる可能性は十分にあると思うので、頭の片隅にとどめておいたほうが良さそうです。
 
-{% endraw %}
