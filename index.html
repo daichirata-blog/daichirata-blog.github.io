@@ -2,18 +2,14 @@
 layout: default
 ---
 
-<!-- <header class="profile">
-     <img class="profile-avatar" src="/assets/images/avatar.png"/>
-     <h1 class="profile-author">{{ site.author }}</h1>
-     <span class="profile-desc">{{ site.description }}</span>
-     </header> -->
-
-<div class="post-list-wrapper">
-  <ul class="post-list">
+<div class="container">
+  <ul class="articles">
     {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">
-        <span class="title">{{ post.title }}</span><aside class="dates">{{ post.date | date:"%b %d, %Y" }}</aside></a>
+    <li class="articles__item">
+      <a class="articles__link" href="{{ post.url }}">
+        <span class="articles__title">{{ post.title }}</span>
+      </a>
+      <span class="articles__date">{{ post.date | date: "%Y-%m-%d" }}</span>
     </li>
     {% endfor %}
   </ul>

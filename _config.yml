@@ -5,7 +5,12 @@ permalink: /:year/:month/:day/:title/
 
 name: blog.daich.org
 description: Everything is code.
-author: Daichi HIRATA
+author:
+  name: Daichi HIRATA
+  bio: CTO at root4 Inc,
+  twitter: daichild
+  github: daichirata
+
 google_analytics: UA-30550631-1
 
 timezone: Asia/Tokyo
@@ -31,6 +36,7 @@ exclude:
   - README.md
   - Rakefile
   - .gitignore
+  - node_modules
 
 defaults:
   - scope:
