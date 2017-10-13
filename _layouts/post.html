@@ -2,41 +2,39 @@
 layout: default
 ---
 
-<article class="article">
-  <header class="article-header">
+<article>
+  <header class="header">
+    <a class="header__link" href="/"><< Home</a>
     <div class="container">
-      <h1 class="article-header__title">{{ page.title }}</h1>
-      <span class="article-header__date">{{ page.date | date:"%Y-%m-%d" }}</span>
+      <h1 class="header__title">{{ page.title }}</h1>
+      <span class="header__date">{{ page.date | date:"%Y-%m-%d" }}</span>
     </div>
   </header>
 
-  <section class="article-content container">
+  <section class="content article-content container">
     {{ content }}
-
     <div class="article-content__social">
       <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     </div>
   </section>
 
-  <footer class="article-meta">
-    <div class="container">
-      <div class="article-meta__inner">
-        <div class="article-meta__author">
-          <a href="/"><img class="article-meta__avatar" src="/assets/images/avatar.png"></a>
-          <span class="article-meta__name">{{ site.author.name }}</span>
-          <span class="article-meta__bio">{{ site.author.bio }}</span>
-        </div>
-
-        <ul class="article-meta__links">
-          <li class="article-meta__item">
-            <a class="article-meta__link" href="https://twitter.com/{{ site.author.twitter }}">@{{ site.author.twitter }}</a>
-          </li>
-          <li class="article-meta__item">
-            <a class="article-meta__link" href="http://github.com/{{ site.author.github }}">github.com/{{ site.author.github }}</a>
-          </li>
-        </ul>
+  <footer class="article-footer">
+    <div class="article-footer__inner container">
+      <div class="article-footer__author">
+        <a href="/"><img class="article-footer__avatar" src="/assets/images/avatar.png"></a>
+        <span class="article-footer__name">{{ site.author.name }}</span>
+        <span class="article-footer__bio">{{ site.author.bio }}</span>
       </div>
+
+      <ul class="article-footer__links">
+        <li class="article-footer__item">
+          <a class="article-footer__link" href="https://twitter.com/{{ site.author.twitter }}">@{{ site.author.twitter }}</a>
+        </li>
+        <li class="article-footer__item">
+          <a class="article-footer__link" href="http://github.com/{{ site.author.github }}">github.com/{{ site.author.github }}</a>
+        </li>
+      </ul>
     </div>
   </footer>
 </article>

@@ -7,8 +7,8 @@
     color: #8f5902;;
 } /* Comment */
 .highlight .err {
-    color: #a40000;
-    border: 1px solid #ef2929;
+    /* color: #a40000; */
+    /* border: 1px solid #ef2929; */
 } /* Error */
 .highlight .g {
     color: #000;
@@ -194,7 +194,8 @@
     color: #204a87;;
 } /* Operator.Word */
 .highlight .w {
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    text-decoration: none;
 
     color: #f8f8f8;;
 } /* Text.Whitespace */

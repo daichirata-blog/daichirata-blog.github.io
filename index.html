@@ -2,7 +2,13 @@
 layout: default
 ---
 
-<div class="container">
+<header class="header">
+  <div class="container">
+    <h1 class="header__title">{{ site.name }}</h1>
+  </div>
+</header>
+
+<div class="content container">
   <ul class="articles">
     {% for post in site.posts %}
     <li class="articles__item">
