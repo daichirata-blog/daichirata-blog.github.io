@@ -1,22 +1,5 @@
 ---
 layout: default
+redirect_to: https://daichi.dev
 ---
 
-<header class="header">
-  <div class="container">
-    <h1 class="header__title">{{ site.name }}</h1>
-  </div>
-</header>
-
-<div class="content container">
-  <ul class="articles">
-    {% for post in site.posts %}
-    <li class="articles__item">
-      <a class="articles__link" href="{{ post.url }}">
-        <span class="articles__title">{{ post.title }}</span>
-      </a>
-      <span class="articles__date">{{ post.date | date: "%Y-%m-%d" }}</span>
-    </li>
-    {% endfor %}
-  </ul>
-</div>
